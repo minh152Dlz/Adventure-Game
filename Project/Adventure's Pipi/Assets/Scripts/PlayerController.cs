@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         float move = Input.GetAxis("Horizontal");
 
-        myAnim.SetFloat("speed", Mathf.Abs(move));
+        myAnim.SetFloat("Speed", Mathf.Abs(move));
 
         myBody.velocity = new Vector2(move*maxSpeed, myBody.velocity.y);
 
