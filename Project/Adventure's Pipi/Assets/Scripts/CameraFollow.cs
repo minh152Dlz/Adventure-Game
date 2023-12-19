@@ -25,5 +25,9 @@ public class CameraFollow : MonoBehaviour
         Vector3 targetCamPos = target.position + offset;
 
         transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing*Time.deltaTime);
+        //khoa camera truc -y
+        if(transform.position.y < lowY) transform.position = new Vector3(transform.position.x, lowY, transform.position.z);
+        //khoa camera truc y
+        if(transform.position.y > lowY) transform.position = new Vector3(transform.position.x, lowY, transform.position.z);
     }
 }
