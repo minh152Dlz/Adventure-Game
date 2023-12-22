@@ -8,9 +8,13 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     public float jumpHeight;
     public float fallSpeed;
+    public float coyoteTime = 0.1f; // Thời gian linh động sau khi rơi xuống
+    public float jumpBufferTime = 0.1f; // Thời gian giữ lại lệnh nhảy
 
     bool facingRight;
     bool grounded;
+    private float coyoteTimeCounter; // Biến đếm thời gian linh động
+    private float jumpBufferCounter; // Biến đếm thời gian giữ lại lệnh nhảy
 
     Rigidbody2D myBody;
     Animator myAnim;
@@ -22,6 +26,8 @@ public class PlayerController : MonoBehaviour
         myAnim = GetComponent<Animator> ();
         myBody.gravityScale = fallSpeed;
         facingRight = true;
+        coyoteTimeCounter = coyoteTime;
+        jumpBufferCounter = 0f;
     }
 
     // Update is called once per frame
@@ -39,12 +45,41 @@ public class PlayerController : MonoBehaviour
             flip();
         }
 
-        if(Input.GetKey(KeyCode.Space)){
-            if(grounded){
-                grounded = false;
-                myBody.velocity = new Vector2(myBody.velocity.x, jumpHeight);//Mathf.Min(jumpHeight, myBody.velocity.y + jumpHeight)
-            }
+        // Coyote time
+        if (grounded)
+        {
+            coyoteTimeCounter = coyoteTime;
         }
+        else
+        {
+            coyoteTimeCounter -= Time.fixedDeltaTime;
+        }
+
+        // Jump buffering
+        if (Input.GetKey(KeyCode.Space))
+        {
+            jumpBufferCounter += jumpBufferTime;
+        }
+
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
+        {
+            //grounded = false;
+            myBody.velocity = new Vector2(myBody.velocity.x, jumpHeight);   //Mathf.Min(jumpHeight, myBody.velocity.y + jumpHeight)
+            
+            // Reset jump buffer counter
+            jumpBufferCounter = 0f;
+        }
+        
+        if (myBody.velocity.y>0f && !Input.GetKey(KeyCode.Space))
+        {
+            myBody.velocity = new Vector2(myBody.velocity.x, myBody.velocity.y *0.5f);  
+            
+            // Reset jump buffer counter
+            coyoteTimeCounter = 0f;
+        }
+
+        
+        
     }
 
     void flip(){
@@ -57,6 +92,12 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Ground"){
             grounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other){
+        if(other.gameObject.tag == "Ground"){
+            grounded = false;
         }
     }
 }
