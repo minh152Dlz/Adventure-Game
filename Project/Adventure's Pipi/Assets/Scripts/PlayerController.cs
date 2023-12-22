@@ -58,18 +58,27 @@ public class PlayerController : MonoBehaviour
         // Jump buffering
         if (Input.GetKey(KeyCode.Space))
         {
-            jumpBufferCounter += Time.fixedDeltaTime;
+            jumpBufferCounter += jumpBufferTime;
         }
 
-        if ((coyoteTimeCounter > 0 || jumpBufferCounter > 0) && Input.GetKey(KeyCode.Space))
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
-            grounded = false;
+            //grounded = false;
             myBody.velocity = new Vector2(myBody.velocity.x, jumpHeight);   //Mathf.Min(jumpHeight, myBody.velocity.y + jumpHeight)
-            }
+            
+            // Reset jump buffer counter
+            jumpBufferCounter = 0f;
+        }
         
+        if (myBody.velocity.y>0f && !Input.GetKey(KeyCode.Space))
+        {
+            myBody.velocity = new Vector2(myBody.velocity.x, myBody.velocity.y *0.5f);  
+            
+            // Reset jump buffer counter
+            coyoteTimeCounter = 0f;
+        }
 
-        // Reset jump buffer counter
-        jumpBufferCounter = 0f;
+        
         
     }
 
@@ -83,6 +92,12 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Ground"){
             grounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other){
+        if(other.gameObject.tag == "Ground"){
+            grounded = false;
         }
     }
 }
