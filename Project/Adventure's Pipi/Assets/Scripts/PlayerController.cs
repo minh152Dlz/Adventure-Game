@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         transform.localScale = theScale; 
     }
 
-    void OnCollisionEnter2D(Collision2D other){
+    void OnTriggerEnter2D(Collision2D other){
         if(other.gameObject.tag == "Ground"){
             grounded = true;
         }
