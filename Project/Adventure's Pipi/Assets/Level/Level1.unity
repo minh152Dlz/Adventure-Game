@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 1631737446}
   - component: {fileID: 1631737451}
   m_Layer: 0
-  m_Name: Player
+  m_Name: WhiteCatIdle_0
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
