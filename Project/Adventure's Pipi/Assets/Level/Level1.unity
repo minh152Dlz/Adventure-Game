@@ -1373,6 +1373,7 @@ GameObject:
   - component: {fileID: 1631737447}
   - component: {fileID: 1631737446}
   - component: {fileID: 1631737451}
+  - component: {fileID: 1631737452}
   m_Layer: 0
   m_Name: WhiteCatIdle_0
   m_TagString: Player
@@ -1435,7 +1436,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.025}
+  m_Offset: {x: 0, y: 0.03}
   serializedVersion: 2
   m_Radius: 0.03
 --- !u!212 &1631737449
@@ -1522,6 +1523,18 @@ MonoBehaviour:
   fallSpeed: 2
   coyoteTime: 0.1
   jumpBufferTime: 0.1
+--- !u!114 &1631737452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631737445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2cd1eb2ac2d8540a510fcb3114ae68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1684568070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,12 +3524,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3440489643383297677, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.158
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440489643383297677, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4052
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440489643383297677, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.62
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 3440489643383297677, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 3440489643383297677, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3553,6 +3574,18 @@ PrefabInstance:
     - target: {fileID: 3440489643383297678, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440489643383297678, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440489643383297679, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440489643383297679, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}

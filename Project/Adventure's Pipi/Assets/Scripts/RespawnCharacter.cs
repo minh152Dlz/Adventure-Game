@@ -5,18 +5,17 @@ using UnityEngine;
 public class RespawnCharacter : MonoBehaviour
 {
     Vector2 startPos;
-    SpriteRenderer spriteRenderer;
-    // Start is called before the first frame update
+    Rigidbody2D playerRb;
 
     private void Awake(){
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        playerRb = GetComponent<Rigidbody2D>();
     }
     private void Start()
     {
         startPos = transform.position;
     }
 
-    private void onTriggerEnter2D(Collider2D collision){
+    private void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Obstacle")){
             Die();
         }
@@ -29,9 +28,12 @@ public class RespawnCharacter : MonoBehaviour
     }
 
     IEnumerator Respawn(float duration){
-        spriteRenderer.enabled = false;
+        playerRb.simulated = false;
+        playerRb.velocity = new Vector2(0,0);
+        transform.localScale = new Vector3(0,0,0);
         yield return new WaitForSeconds(duration);
         transform.position = startPos;
-        spriteRenderer.enabled = true;
+        transform.localScale = new Vector3(7,7,1);
+        playerRb.simulated = true;
     }
 }
