@@ -328,7 +328,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+
   m_RootOrder: 4
+
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &156555384
 PrefabInstance:
@@ -494,6 +496,63 @@ BoxCollider2D:
 --- !u!1001 &314293081
 PrefabInstance:
   m_ObjectHideFlags: 0
+--- !u!114 &287005456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287005455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c453f2231e88069489346791cc08db00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 0.5
+--- !u!251 &287005457
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287005455}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!61 &287005458
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287005455}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+
+
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 1684568071}
@@ -561,11 +620,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4382937047493464698, guid: aa377da947f93aa42b3d8f9446462627, type: 3}
   m_PrefabInstance: {fileID: 314293081}
   m_PrefabAsset: {fileID: 0}
+
 --- !u!4 &324106097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4961243305158150, guid: 71cce0e18cda5cf41922fd12f108ed51, type: 3}
   m_PrefabInstance: {fileID: 2002942627}
   m_PrefabAsset: {fileID: 0}
+
 --- !u!1 &379748605
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +709,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+
   m_RootOrder: 0
+
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &438348584 stripped
 Transform:
@@ -660,6 +723,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4382937047493464698, guid: aa377da947f93aa42b3d8f9446462627, type: 3}
   m_PrefabInstance: {fileID: 1368591322}
   m_PrefabAsset: {fileID: 0}
+
 --- !u!1001 &506150978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -828,6 +892,8 @@ MonoBehaviour:
 --- !u!1001 &596315662
 PrefabInstance:
   m_ObjectHideFlags: 0
+
+
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 1684568071}
@@ -6337,6 +6403,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4382937047493464698, guid: aa377da947f93aa42b3d8f9446462627, type: 3}
   m_PrefabInstance: {fileID: 1455205331}
   m_PrefabAsset: {fileID: 0}
+
 --- !u!1 &1457395857
 GameObject:
   m_ObjectHideFlags: 0
@@ -6379,7 +6446,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+
   m_RootOrder: 5
+
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1504023160
 PrefabInstance:
@@ -6592,7 +6661,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+
   m_RootOrder: 6
+
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1631737451
 MonoBehaviour:
@@ -11749,7 +11820,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -13850,6 +13921,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+
 --- !u!1001 &1957191009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13915,6 +13987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71cce0e18cda5cf41922fd12f108ed51, type: 3}
+
 --- !u!1001 &1968204578
 PrefabInstance:
   m_ObjectHideFlags: 0
