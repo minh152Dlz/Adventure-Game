@@ -28,6 +28,6 @@ public class CameraFollow : MonoBehaviour
         //khoa camera truc -y
         if(transform.position.y < lowY) transform.position = new Vector3(transform.position.x, lowY, transform.position.z);
         //khoa camera truc y
-        if(transform.position.y > lowY) transform.position = new Vector3(transform.position.x, lowY, transform.position.z);
+        //if(transform.position.y > lowY) transform.position = new Vector3(transform.position.x, lowY, transform.position.z);
     }
 }
