@@ -12,20 +12,40 @@ public class ParticleController : MonoBehaviour
     [Range(0,0.2f)]
     [SerializeField] float dustFormationPeriod;
 
-    [SerializeField] Rigidbody2D playerRb;
+    [SerializeField] Rigidbody2D playerRb; 
+
+    [SerializeField] ParticleSystem fallParticle;
 
     float counter;
+    bool isOnGround;
 
     private void Update()
     {
         counter += Time.deltaTime;
-        if(Mathf.Abs(playerRb.velocity.x) > occurAfterVelocity)
+        if(isOnGround && Mathf.Abs(playerRb.velocity.x) > occurAfterVelocity)
         {
             if(counter > dustFormationPeriod)
             {
                 movementParticle.Play();
                 counter = 0;
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Ground"))
+        {
+            fallParticle.Play();
+            isOnGround = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Ground"))
+        {
+            isOnGround = false;
         }
     }
 }
