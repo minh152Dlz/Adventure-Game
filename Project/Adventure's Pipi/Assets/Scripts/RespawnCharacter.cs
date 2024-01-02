@@ -7,8 +7,9 @@ public class RespawnCharacter : MonoBehaviour
     Vector2 startPos;
     Rigidbody2D playerRb;
 
-    private void Awake()
-    {
+
+    private void Awake(){
+
         playerRb = GetComponent<Rigidbody2D>();
     }
     private void Start()
@@ -16,10 +17,10 @@ public class RespawnCharacter : MonoBehaviour
         startPos = transform.position;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Obstacle"))
-        {
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.CompareTag("Obstacle")){
+
             Die();
         }
     }
@@ -30,14 +31,15 @@ public class RespawnCharacter : MonoBehaviour
         StartCoroutine(Respawn(0.5f));
     }
 
-    IEnumerator Respawn(float duration)
-    {
+
+    IEnumerator Respawn(float duration){
         playerRb.simulated = false;
-        playerRb.velocity = new Vector2(0, 0);
-        transform.localScale = new Vector3(0, 0, 0);
+        playerRb.velocity = new Vector2(0,0);
+        transform.localScale = new Vector3(0,0,0);
         yield return new WaitForSeconds(duration);
         transform.position = startPos;
-        transform.localScale = new Vector3(7, 7, 1);
+        transform.localScale = new Vector3(7,7,1);
         playerRb.simulated = true;
     }
 }
+
