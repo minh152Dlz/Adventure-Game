@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RespawnCharacter : MonoBehaviour
 {
     Vector2 startPos;
     Rigidbody2D playerRb;
-
+    public Text txtdeath;
+    public int deathCount = 0;
 
     private void Awake(){
 
@@ -22,6 +24,8 @@ public class RespawnCharacter : MonoBehaviour
         if(collision.CompareTag("Obstacle")){
 
             Die();
+            deathCount++;
+            txtdeath.text = deathCount.ToString();
         }
     }
 
