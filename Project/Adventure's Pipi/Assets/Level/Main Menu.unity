@@ -568,6 +568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08497408e0c5582428ffe27fbe831dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons: []
+  levelButtons: {fileID: 67612124}
 --- !u!1 &268470879
 GameObject:
   m_ObjectHideFlags: 0
