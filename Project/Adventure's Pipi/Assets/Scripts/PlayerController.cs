@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D myBody;
     Animator myAnim;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +65,6 @@ public class PlayerController : MonoBehaviour
         {
             //grounded = false;
             myBody.velocity = new Vector2(myBody.velocity.x, jumpHeight);   //Mathf.Min(jumpHeight, myBody.velocity.y + jumpHeight)
-            
             // Reset jump buffer counter
             jumpBufferCounter = 0f;
         }
@@ -100,4 +99,6 @@ public class PlayerController : MonoBehaviour
             grounded = false;
         }
     }
+
+    
 }
