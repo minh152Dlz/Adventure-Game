@@ -5,23 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class Scene : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Kiểm tra xem đối tượng va chạm có tag là "Player" không
-        if (collision.CompareTag("Player"))
-        {
-            // Lấy ra Scenecontroller.instance một lần để tránh việc gọi hàm NextLevel trên một đối tượng null
-            Scenecontroller sceneController = Scenecontroller.instance;
 
-            if (sceneController != null)
-            {
-                // Gọi NextLevel chỉ khi sceneController không phải là null
-                sceneController.NextLevel();
-            }
-            else
-            {
-                Debug.LogWarning("Scenecontroller.instance is null. Make sure it is properly initialized.");
-            }
+   private void OnTriggerEnter2D(Collider2D conllision){
+    if(conllision.CompareTag("Player")){
+        UnlockNewLevel();
+        Scenecontroller.instance.NextLevel();
+
+    }}
+
+    void UnlockNewLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex",SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
         }
     }
+    
+
 }
