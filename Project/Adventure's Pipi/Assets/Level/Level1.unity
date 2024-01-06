@@ -6831,6 +6831,7 @@ GameObject:
   - component: {fileID: 1631737446}
   - component: {fileID: 1631737451}
   - component: {fileID: 1631737452}
+  - component: {fileID: 1631737453}
   m_Layer: 0
   m_Name: WhiteCatIdle_0
   m_TagString: Player
@@ -6990,6 +6991,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a2cd1eb2ac2d8540a510fcb3114ae68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1631737453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631737445}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ced33b8dcefb24cbe222fc0b52d13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1684568070
@@ -19299,11 +19312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3440489643383297677, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5163
+      value: -1.62
       objectReference: {fileID: 0}
     - target: {fileID: 3440489643383297677, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7204
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 3440489643383297677, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19346,8 +19359,16 @@ PrefabInstance:
       value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 3440489643383297679, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3774159
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440489643383297679, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440489643383297679, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.31129205
       objectReference: {fileID: 0}
     - target: {fileID: 3440489643383297679, guid: b8b1538fbfa3aad438efa7a6984112dd, type: 3}
       propertyPath: m_IsTrigger

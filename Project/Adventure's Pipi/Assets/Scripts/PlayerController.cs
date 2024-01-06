@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D myBody;
     Animator myAnim;
-    private string JumpAnim = "Jump";
+    
     // Start is called before the first frame update
     void Start()
     {
