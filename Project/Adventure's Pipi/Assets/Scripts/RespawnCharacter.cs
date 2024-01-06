@@ -26,9 +26,7 @@ public class RespawnCharacter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Obstacle")){
-            Die();
-            deathCount++;
-            txtdeath.text = deathCount.ToString();
+            Die();  
         }
     }
 
@@ -45,7 +43,8 @@ public class RespawnCharacter : MonoBehaviour
         playerRb.velocity = new Vector2(0,0);
         
         yield return new WaitForSeconds(duration);
-       
+        deathCount++;
+        txtdeath.text = deathCount.ToString();
         myanim.SetTrigger("alive"); 
         transform.position = startPos;
         playerRb.simulated = true;
