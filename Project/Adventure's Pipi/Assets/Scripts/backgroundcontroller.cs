@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Backgroundcontroller : MonoBehaviour
+public class backgroundcontroller : MonoBehaviour
 {
     [Range(-1f,1f)]
     public float scrollSpeed = 0.5f;
