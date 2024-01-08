@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     public float fallSpeed;
     public float coyoteTime = 0.1f; // Thời gian linh động sau khi rơi xuống
     public float jumpBufferTime = 0.1f; // Thời gian giữ lại lệnh nhảy
-
+    public AudioSource jumpSound;
+    public AudioSource landingSound;
     bool facingRight;
     bool grounded;
     private float coyoteTimeCounter; // Biến đếm thời gian linh động
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             jumpBufferCounter += jumpBufferTime;
+            jumpSound.Play();
         }
 
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
@@ -91,7 +93,9 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Ground"){
             grounded = true;
+            landingSound.Play();
         }
+
     }
 
     void OnCollisionExit2D(Collision2D other){
