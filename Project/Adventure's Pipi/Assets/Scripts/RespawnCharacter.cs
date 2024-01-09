@@ -11,6 +11,9 @@ public class RespawnCharacter : MonoBehaviour
     public Text txtdeath;
     public int deathCount = 0;
     private Animator myanim;
+    public AudioSource respawnSound;
+    public AudioSource deathSound;
+    
 
 
     private void Awake(){
@@ -26,7 +29,8 @@ public class RespawnCharacter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Obstacle")){
-            Die();  
+            Die(); 
+            deathSound.Play();
         }
     }
 
@@ -45,9 +49,11 @@ public class RespawnCharacter : MonoBehaviour
         yield return new WaitForSeconds(duration);
         deathCount++;
         txtdeath.text = deathCount.ToString();
+        Debug.Log('1');
         myanim.SetTrigger("alive"); 
         transform.position = startPos;
         playerRb.simulated = true;
+        respawnSound.Play();
         
     }
 }
