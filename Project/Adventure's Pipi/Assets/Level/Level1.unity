@@ -11856,6 +11856,7 @@ GameObject:
   - component: {fileID: 1189028106}
   - component: {fileID: 1189028105}
   - component: {fileID: 1189028104}
+  - component: {fileID: 1189028103}
   - component: {fileID: 1189028102}
   - component: {fileID: 1189028101}
   - component: {fileID: 1189028100}
@@ -12267,6 +12268,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1189028103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189028097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2cd1eb2ac2d8540a510fcb3114ae68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtdeath: {fileID: 12390612}
+  deathCount: 0
+  respawnSound: {fileID: 1189028100}
+  deathSound: {fileID: 1189028099}
 --- !u!114 &1189028104
 MonoBehaviour:
   m_ObjectHideFlags: 0
