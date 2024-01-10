@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
+    public Transform[] listtarget;
     public float smoothing;
 
     Vector3 offset;
@@ -14,14 +15,16 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = listtarget[0];
         offset = transform.position - target.position;
-
+        
         lowY = transform.position.y;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        StartCoroutine(Switchcamera());
         Vector3 targetCamPos = target.position + offset;
 
         transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing*Time.deltaTime);
@@ -29,5 +32,20 @@ public class CameraFollow : MonoBehaviour
         //if(transform.position.y < lowY) transform.position = new Vector3(transform.position.x, lowY, transform.position.z);
         //khoa camera truc y
         //if(transform.position.y > lowY) transform.position = new Vector3(transform.position.x, lowY, transform.position.z);
+    }
+
+    IEnumerator Switchcamera()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            yield return new WaitForSeconds(0.5f);
+            foreach(Transform obj in listtarget)
+            {
+                if(obj.GetComponent<PlayerController>().enabled)
+                {
+                    target = obj;
+                }
+            }
+        }
     }
 }
