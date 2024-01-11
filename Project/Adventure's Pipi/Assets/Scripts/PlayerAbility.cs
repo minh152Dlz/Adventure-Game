@@ -20,6 +20,7 @@ public class PlayerAbility : MonoBehaviour
             if(check){
                 if(gameObject.GetComponent<ItemCollector>().ruby == 1)
                 {
+                    playerPrefab.GetComponent<Animator>().SetFloat("Speed", 0);
                     gameObject.GetComponent<ItemCollector>().ruby = 0;
                     PlayerController prefabMovement = playerPrefab.GetComponent<PlayerController>();
                     prefabMovement.enabled = false;
@@ -30,6 +31,7 @@ public class PlayerAbility : MonoBehaviour
             }
             else
             {
+                GetComponent<Animator>().SetFloat("Speed", 0);
                 gameObject.GetComponent<PlayerController>().enabled = false;
                 playerPrefab.GetComponent<PlayerController>().enabled = true;
             }
