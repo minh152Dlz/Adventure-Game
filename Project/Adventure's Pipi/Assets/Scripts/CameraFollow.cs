@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public Animator myanim;
     public Transform target;
     public float smoothing;
 

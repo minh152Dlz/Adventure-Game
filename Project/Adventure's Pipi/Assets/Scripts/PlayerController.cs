@@ -78,11 +78,11 @@ public class PlayerController : MonoBehaviour
             // Reset jump buffer counter
             coyoteTimeCounter = 0f;
         }
-        if (Input.GetKey(KeyCode.UpArrow))
-    {
+       // if (Input.GetKey(KeyCode.UpArrow))
+   // {
         // Cập nhật vận tốc theo hướng y
-        myBody.velocity = new Vector2(myBody.velocity.x, maxSpeed);
-    }
+      //  myBody.velocity = new Vector2(myBody.velocity.x, maxSpeed);
+   // }
 
         
         
