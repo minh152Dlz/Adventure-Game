@@ -5483,6 +5483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 880384737}
+  isPause: 0
 --- !u!1 &904943091
 GameObject:
   m_ObjectHideFlags: 0
@@ -11897,6 +11898,7 @@ GameObject:
   - component: {fileID: 1192350998}
   - component: {fileID: 1192350997}
   - component: {fileID: 1192350996}
+  - component: {fileID: 1192350999}
   m_Layer: 5
   m_Name: Pause Button
   m_TagString: Untagged
@@ -11980,6 +11982,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1192350999}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: onPause
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 591658741}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1192350997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12018,6 +12032,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192350994}
   m_CullTransparentMesh: 1
+--- !u!114 &1192350999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192350994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c01d0c5f53a564785a39173b21b866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 880384737}
+  isPause: 0
 --- !u!1 &1195117630
 GameObject:
   m_ObjectHideFlags: 0
@@ -20588,6 +20616,7 @@ GameObject:
   - component: {fileID: 1548511087}
   - component: {fileID: 1548511086}
   - component: {fileID: 1548511085}
+  - component: {fileID: 1548511088}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -20671,6 +20700,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1548511088}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: unPause
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 591658741}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1548511086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20709,6 +20750,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548511083}
   m_CullTransparentMesh: 1
+--- !u!114 &1548511088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548511083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c01d0c5f53a564785a39173b21b866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 880384737}
+  isPause: 0
 --- !u!1 &1571925333
 GameObject:
   m_ObjectHideFlags: 0
