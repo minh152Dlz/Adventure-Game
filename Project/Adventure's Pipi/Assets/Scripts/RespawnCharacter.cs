@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,11 +13,10 @@ public class RespawnCharacter : MonoBehaviour
     private Animator myanim;
     public AudioSource respawnSound;
     public AudioSource deathSound;
-    
-
+    PlayerAbility playerAbility;
 
     private void Awake(){
-
+        playerAbility = GetComponent<PlayerAbility>();
         playerRb = GetComponent<Rigidbody2D>();
         myanim = GetComponent<Animator>();
     }
@@ -38,7 +37,15 @@ public class RespawnCharacter : MonoBehaviour
     void Die()
     {
         myanim.SetTrigger("death");
-        StartCoroutine(Respawn(1.5f));
+        if(playerAbility.check)
+        {
+            StartCoroutine(Respawn(1.5f));
+        }
+        else
+        {
+            gameObject.GetComponent<PlayerController>().enabled = false;
+            playerAbility.playerPrefab.GetComponent<PlayerController>().enabled = true;
+        }
     }
 
     IEnumerator Respawn(float duration){

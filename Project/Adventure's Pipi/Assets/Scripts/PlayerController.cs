@@ -92,8 +92,10 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Ground"){
+            Debug.Log("2");
             grounded = true;
             landingSound.Play();
+            Debug.Log("1");
         }
 
     }

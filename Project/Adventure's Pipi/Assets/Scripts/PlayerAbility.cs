@@ -7,7 +7,7 @@ public class PlayerAbility : MonoBehaviour
     public GameObject playerPrefab;  
     public Transform playerClone;  
     public bool check;
-
+    public GameObject stalk;
     void Start()
     {
         
@@ -16,7 +16,7 @@ public class PlayerAbility : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
-        {
+        {   
             if(check){
                 if(gameObject.GetComponent<ItemCollector>().ruby == 1)
                 {
@@ -25,6 +25,7 @@ public class PlayerAbility : MonoBehaviour
                     prefabMovement.enabled = false;
                     playerClone.gameObject.SetActive(true);
                     playerClone.GetComponent<PlayerController>().enabled = true;
+                    playerClone.position = stalk.transform.position;
                 }
             }
             else
