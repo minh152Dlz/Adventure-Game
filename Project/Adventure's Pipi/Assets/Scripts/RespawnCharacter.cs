@@ -29,13 +29,14 @@ public class RespawnCharacter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Obstacle")){
             Die(); 
-            deathSound.Play();
+            //deathSound.Play();
         }
     }
 
     // Update is called once per frame
     void Die()
     {
+        deathSound.Play();
         myanim.SetTrigger("death");
         if(playerAbility.check)
         {
