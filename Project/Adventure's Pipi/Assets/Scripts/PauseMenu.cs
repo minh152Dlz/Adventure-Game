@@ -6,6 +6,17 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    public bool isPause = false;
+
+    public void unPause(GameObject obj)
+    {
+        obj.GetComponent<AudioSource>().enabled = true;
+    }
+
+    public void onPause(GameObject obj)
+    {       
+        obj.GetComponent<AudioSource>().enabled = false;   
+    }
 
     public void Pause()
     {
