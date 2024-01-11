@@ -25,6 +25,14 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         StartCoroutine(Switchcamera());
+        foreach(Transform obj in listtarget)
+            {
+                 if(!obj.GetComponent<PlayerAbility>().check && obj.GetComponent<PlayerController>().enabled)
+                {
+                    target = listtarget[0];
+                }
+            }
+
         Vector3 targetCamPos = target.position + offset;
 
         transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing*Time.deltaTime);
