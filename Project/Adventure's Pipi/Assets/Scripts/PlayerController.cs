@@ -8,14 +8,14 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     public float jumpHeight;
     public float fallSpeed;
-    public float coyoteTime = 0.1f; // Thời gian linh động sau khi rơi xuống
-    public float jumpBufferTime = 0.1f; // Thời gian giữ lại lệnh nhảy
+    public float coyoteTime = 0.1f; // Thoi gian linh dong sau khi roi xuong
+    public float jumpBufferTime = 0.1f; // Thoi gian giu lai lenh nhay
     public AudioSource jumpSound;
     public AudioSource landingSound;
     bool facingRight;
-    bool grounded;
-    private float coyoteTimeCounter; // Biến đếm thời gian linh động
-    private float jumpBufferCounter; // Biến đếm thời gian giữ lại lệnh nhảy
+    bool grounded, grounded2;
+    private float coyoteTimeCounter; // Bien dem thoi gian linh dong
+    private float jumpBufferCounter; // Bien dem thoi gian giu lai lenh nhay
 
     Rigidbody2D myBody;
     Animator myAnim;
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
             grounded = true;
             landingSound.Play();
         }
-
+        
     }
 
     void OnCollisionExit2D(Collision2D other){
@@ -103,6 +103,4 @@ public class PlayerController : MonoBehaviour
             grounded = false;
         }
     }
-
-    
 }
