@@ -28,19 +28,23 @@ public class RespawnCharacter : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Obstacle"))
-        {
-            Die();
-            deathSound.Play();
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.CompareTag("Obstacle")){
+            Die(); 
+            
+
         }
     }
 
     
     void Die()
     {
+
+        deathSound.Play();
+
         myanim.SetTrigger("white");
+
         myanim.SetTrigger("death");
 
         StartCoroutine(Respawn(1.5f));
