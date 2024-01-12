@@ -13,11 +13,11 @@ public class RespawnCharacter : MonoBehaviour
     public AudioSource respawnSound;
     public AudioSource deathSound;
     //CameraFollow cameraFollow;
-
+    PlayerAbility playerability;
 
     private void Awake()
     {
-        //cameraFollow = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>();
+        playerability = GetComponent<PlayerAbility>();
         playerRb = GetComponent<Rigidbody2D>();
         myanim = GetComponent<Animator>();
     }
@@ -27,27 +27,26 @@ public class RespawnCharacter : MonoBehaviour
         startPos = transform.position;
     }
 
-
-
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Obstacle")){
             Die(); 
-            
-
         }
     }
 
-    
     void Die()
     {
-
-        deathSound.Play();
-
         myanim.SetTrigger("white");
-
+        deathSound.Play();
         myanim.SetTrigger("death");
-
-        StartCoroutine(Respawn(1.5f));
+        if(playerability.check)
+        {
+            StartCoroutine(Respawn(1.5f));
+        }
+        else
+        {
+            gameObject.GetComponent<PlayerController>().enabled = false;
+            playerability.playerPrefab.GetComponent<PlayerController>().enabled = true;
+        }
     }
 
     IEnumerator Respawn(float duration)
@@ -58,9 +57,7 @@ public class RespawnCharacter : MonoBehaviour
         yield return new WaitForSeconds(duration);
         deathCount++;
         txtdeath.text = deathCount.ToString();
-        Debug.Log('1');
-        
-    
+
         myanim.SetTrigger("alive");
 
         transform.position = startPos;
