@@ -27,6 +27,7 @@ public class RespawnCharacter : MonoBehaviour
         startPos = transform.position;
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Obstacle"))
@@ -41,9 +42,6 @@ public class RespawnCharacter : MonoBehaviour
     {
         myanim.SetTrigger("white");
         myanim.SetTrigger("death");
-
-       
-       
 
         StartCoroutine(Respawn(1.5f));
     }
