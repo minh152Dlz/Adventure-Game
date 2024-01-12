@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource jumpSound;
     public AudioSource landingSound;
     bool facingRight;
-    bool grounded;
+    bool grounded, grounded2;
     private float coyoteTimeCounter; // Bien dem thoi gian linh dong
     private float jumpBufferCounter; // Bien dem thoi gian giu lai lenh nhay
 
@@ -92,12 +92,10 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Ground"){
-            Debug.Log("2");
             grounded = true;
             landingSound.Play();
-            Debug.Log("1");
         }
-
+        
     }
 
     void OnCollisionExit2D(Collision2D other){
