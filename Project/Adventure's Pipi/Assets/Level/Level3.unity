@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 7546969}
   m_Layer: 0
   m_Name: Medieval_tiles_free2_62 (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9046,7 +9046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &670698922
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36767,7 +36767,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 834289319}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b7fd6e4bd94dbc54b8e8d6f7cb902217, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -42115,7 +42115,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &872925766
 RectTransform:
@@ -56337,7 +56337,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1766956342}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b7fd6e4bd94dbc54b8e8d6f7cb902217, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
